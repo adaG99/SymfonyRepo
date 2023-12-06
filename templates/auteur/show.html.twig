@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des auteurs{% endblock %}
+
+{% block body %}
+    <h1>Auteurs</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ auteur.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ auteur.nom }}</td>
+            </tr>
+            <tr>
+                <th>Prenom</th>
+                <td>{{ auteur.prenom }}</td>
+            </tr>
+            <tr>
+                <th>Dob</th>
+                <td>{{ auteur.dob ? auteur.dob|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Nationalite</th>
+                <td>{{ auteur.nationalite }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    
+    <button type="button" class="btn btn-primary" onclick="window.location='{{ path('app_auteur_index') }}'">Retourner à la liste</button>
+    <button type="button" class="btn btn-primary" onclick="window.location='{{ path('app_auteur_edit', {'id': auteur.id}) }}'">modifier</button>
+  <br>
+  <br>
+    {{ include('auteur/delete.html.twig') }}
+{% endblock %}

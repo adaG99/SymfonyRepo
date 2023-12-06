@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier un ou plusieurs livres{% endblock %}
+
+{% block body %}
+    <h1>Modifier un livre</h1>
+    <br>
+   {{ include('livre/form.html.twig', {'button_label': 'mettre à jour'}) }}
+   <br>
+   {{ include('livre/delete.html.twig') }}
+   <br>
+   <br>
+   <button type="button" class="btn btn-primary" onclick="window.location='{{ path('app_livre_index') }}'">Retourner à la liste</button>
+
+   
+{% endblock %}

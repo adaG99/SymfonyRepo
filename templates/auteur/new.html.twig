@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Les nouveaux auteurs{% endblock %}
+
+{% block body %}
+    <h1>Ajouter un ou plusieurs auteurs</h1>
+
+    {{ include('auteur/form.html.twig') }}
+    <br>
+    <button type="button" class="btn btn-primary" onclick="window.location='{{ path('app_auteur_index') }}'">Retourner à la liste</button>
+{% endblock %}

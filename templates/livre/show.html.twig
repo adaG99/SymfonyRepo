@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Livres{% endblock %}
+
+{% block body %}
+    <h1>Livres</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ livre.id }}</td>
+            </tr>
+            <tr>
+                <th>Titre</th>
+                <td>{{ livre.titre }}</td>
+            </tr>
+            <tr>
+                <th>Identification</th>
+                <td>{{ livre.identification }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <button type="button" class="btn btn-primary" onclick="window.location='{{ path('app_livre_index') }}'">retourner à la liste de livres</button>
+    <button type="button" class="btn btn-primary" onclick="window.location='{{ path('app_livre_edit', {'id': livre.id})}}'">Modifier un livre</button>
+    <br>
+    <br>
+    {{ include('livre/delete.html.twig') }}
+{% endblock %}

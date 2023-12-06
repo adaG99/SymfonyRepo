@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}modifier une ou plusieurs Categorie(s){% endblock %}
+
+{% block body %}
+    <h1>Modifier une categorie</h1>
+
+    {{ include('categorie/form.html.twig', {'button_label': 'mettre à jour'}) }}
+    <br>
+    {{ include('categorie/delete.html.twig') }}
+    <br>
+    <br>
+    <button type="button" class="btn btn-primary" onclick="window.location='{{ path('app_categorie_index') }}'">Retourner à la liste</button>
+    
+
+   
+{% endblock %}

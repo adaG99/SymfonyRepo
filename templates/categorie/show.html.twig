@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Categories{% endblock %}
+
+{% block body %}
+    <h1>Categories</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ categorie.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ categorie.nom }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ categorie.description }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <button type="button" class="btn btn-primary" onclick="window.location='{{ path('app_categorie_index') }}'">Retourner à la liste</button>
+    <button type="button" class="btn btn-primary" onclick="window.location='{{ path('app_categorie_edit', {'id': categorie.id}) }}'">modifier</button>
+<br>
+<br>
+   {{ include('categorie/delete.html.twig') }}
+{% endblock %}

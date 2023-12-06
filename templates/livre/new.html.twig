@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajout de nouveaux livres{% endblock %}
+
+{% block body %}
+    <h1>Ajouter un nouveau un livre</h1>
+
+    {{ include('livre/form.html.twig') }}
+    <br>
+    <button type="button" class="btn btn-primary" onclick="window.location='{{ path('app_livre_index') }}'">retourner à la liste de livres</button>
+</td>
+{% endblock %}

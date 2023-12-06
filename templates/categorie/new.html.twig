@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% form_theme form 'bootstrap_5_layout.html.twig'%}
+
+{% block title %}Ajout d'une ou plusieurs categorie(s){% endblock %}
+
+{% block body %}
+    <h1>Ajouter une nouvelle catégorie</h1>
+
+    {{ include('categorie/form.html.twig') }}
+    <br>
+    <button type="button" class="btn btn-primary" onclick="window.location='{{ path('app_categorie_index') }}'">Retourner à la liste</button>
+{% endblock %}
